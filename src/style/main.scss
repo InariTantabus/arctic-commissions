@@ -1,0 +1,22 @@
+$blue: #06B6FA;
+$dark-blue: #024864;
+$green: #0AD09B;
+$dark-green: #056149;
+
+html {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    color: #666;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+@import './navbar-layout.scss';
+@import './store.scss';
+@import './contact.scss';
+@import './tos.scss';
+@import './examples.scss';

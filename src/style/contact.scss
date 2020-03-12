@@ -1,0 +1,151 @@
+.contact {
+  display: grid;
+  grid-template-columns: [logo-s] 300px [logo-e line-s] 2px [line-e info-s] 450px [info-e];
+  grid-template-rows: [s] 1fr [email-s] 30px [email-e discord-s] 30px [discord-e] 1fr [e];
+  align-content: center;
+  justify-content: center;
+  grid-column-gap: 50px;
+  grid-row-gap: 40px;
+
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 15px 20px 10px rgba(0,0,0,0.3); 
+  margin-top: 200px;
+  padding: 50px 0;
+
+  &__logo {
+    transform: scale(2);
+    grid-column: logo-s/logo-e;
+    grid-row: s/e;
+    align-self: center;
+
+    display: grid;
+    grid-template-columns: 100px 150px;
+    align-items: center;
+    cursor: default;
+
+    &__image img {
+      height: 100px;
+      width: 100px;
+      transform: translateY(5px);
+      padding-left: 20px;
+    }
+
+    &__text {
+      font-size: 30px;
+      transform: translateX(-30px) translateY(-5px);
+      color: $blue;
+    }
+  }
+
+  &__line {
+    grid-column: line-s/line-e;
+    grid-row: s/e;
+
+    height: 200px;
+    border-right: 2px solid $dark-green;
+  }
+
+  &__email,
+  &__discord {
+    grid-column: info-s/info-e;
+
+    font-size: 30px;
+
+    display: grid;
+    grid-template-rows: [s] 1fr [e];
+    grid-template-columns: [icon-s] 40px [icon-e text-s] 1fr [text-e];
+    grid-column-gap: 30px;
+
+    align-items: center;
+    color: $green;
+
+    transform: translateY(-5px);
+
+    & > * {
+      grid-row: s/e;
+    }
+
+    i {
+      font-size: 50px;
+      color: $dark-green;
+      grid-column: icon-s/icon-e;
+    }
+  }
+
+  &__email {
+    grid-row: email-s/email-e;
+  }
+
+  &__discord {
+    grid-row: discord-s/discord-e;
+  }
+
+}
+
+.dot {
+  height: 7px;
+  width: 7px;
+  background-color: $dark-green;
+  border-radius: 50%;
+  display: inline-block;
+
+  transform: translateY(137px) translateX(14px);
+}
+
+@media only screen and (max-width: 600px) {
+  .contact {
+    grid-template-columns: [s] 1fr [e];
+    grid-template-rows: [logo-s] 200px [logo-e line-s] 2px [line-e email-s] 50px [email-e discord-s] 50px [discord-e] 1fr;
+    grid-gap: 0px 25px;
+
+    height: 100%;
+    background-color: inherit;
+    margin-top: 0px;
+    padding: 0px 0;
+
+
+    &__logo {
+      transform: scale(1.5);
+      grid-row: logo-s/logo-e;
+      grid-column: s/e;
+      justify-self: center;
+    }
+
+    &__line {
+      grid-row: line-s/line-e;
+      grid-column: s/e;
+  
+      height: 2px;
+      border-top: 2px solid $dark-green;
+      border-right: 0px;
+    }
+
+    &__email,
+    &__discord {
+      grid-column: s/e;
+      font-size: 18px;
+      justify-self: left;
+      margin: 25px 0 0 25px;
+    }
+
+    &__email {
+      grid-row: email-s/email-e;
+    }
+
+    &__discord {
+      grid-row: discord-s/discord-e;
+    }
+  }
+
+  .dot {
+    height: 6px;
+    width: 6px;
+    background-color: $dark-green;
+    border-radius: 50%;
+    display: inline-block;
+  
+    transform: translateY(-8px) translateX(39px);
+  }
+}

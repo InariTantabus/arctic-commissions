@@ -1,0 +1,133 @@
+.examples {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+
+  height: 100%;
+
+  &__container {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    width: 150px;
+    height: calc(100% - 30px);
+    box-shadow: 0px 15px 20px 10px rgba(0,0,0,0.3); 
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &__image {
+      transition: all .3s ease-in-out;
+
+      img {
+        height: auto;
+        width: 125px;
+        border-radius: 10px;
+        box-shadow: 0px 15px 20px 10px rgba(0,0,0,0.3);
+
+        transition: all .3s ease-in-out;
+      }
+
+      :hover {
+        transform: scale(1.1);
+      }
+    }
+
+    & a i {
+      color: $dark-green;
+      font-size: 50px;
+    }
+  }
+
+  &__showcase {
+    width: fit-content;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    &__image {
+      grid-row: 1/-1;
+      grid-column: 1/-1;
+
+      align-self: center;
+      justify-self: center;
+
+      img {
+        height: auto;
+        width: 750px;
+        border-radius: 10px;
+        box-shadow: 0px 15px 20px 10px rgba(0,0,0,0.3); 
+      }
+    }
+  }
+}
+
+.active {
+  transform: scale(1.1);
+  
+  img {
+    border: 2px solid $dark-green;
+  }
+
+  :hover {
+    transform: scale(1);
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  .examples {
+    background-color: inherit;
+
+    height: fit-content;
+    
+    &__container {
+      border-radius: 0px;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 0 0 rgba(0,0,0,0); 
+      background-color: inherit;
+
+      &__image {
+        width: fit-content;
+        margin-top: 10px;
+
+        img {
+          height: auto;
+          width: calc(100%);
+          box-shadow: 0px 10px 10px 5px rgba(0,0,0,0.3);
+        }
+  
+        :hover {
+          transform: scale(1);
+        }
+      }
+
+      & a i {
+        display: none;
+      }
+    }
+
+    &__showcase {
+      display: none;
+    }
+  }
+
+  .active {
+    transform: scale(1);
+    
+    img {
+      border: 0px;
+    }
+  
+    :hover {
+      transform: scale(1);
+    }
+  }
+}
