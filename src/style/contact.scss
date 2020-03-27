@@ -149,3 +149,21 @@
     transform: translateY(-8px) translateX(39px);
   }
 }
+
+@media only screen and (max-width: 1600px) and (min-width: 600px) {
+  .contact {
+    grid-template-columns: [logo-s] minmax(250px 1fr) [logo-e line-s] 2px [line-e info-s] 2fr [info-e];
+    grid-template-rows: [s] 1fr [email-s] 30px [email-e discord-s] 30px [discord-e] 1fr [e];
+    grid-column-gap: 20px;
+
+    &__logo {
+      transform: scale(1.4);
+      justify-self: end;
+    }
+
+    &__email,
+    &__discord {
+      font-size: 20px;
+    }
+  }
+}

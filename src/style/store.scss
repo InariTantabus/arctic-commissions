@@ -165,3 +165,29 @@
     }
   }
 }
+
+@media only screen and (max-width: 1600px) and (min-width: 600px) {
+  .display-item {
+    grid-template-rows: [s] 1fr [media-title-s] 50px [media-title-e media-price-s] 50px [media-price-e] 1fr [e];
+    grid-template-columns: [image-s] 200px [image-e title-s] 1fr [title-e description-s] 2fr [description-e];
+
+    & > * {
+      font-size: 16px;
+    }
+
+    &__title {
+      grid-row: media-title-s/media-title-e;
+    }
+
+    &__price {
+      grid-column: title-s/title-e;
+      grid-row: media-price-s/media-price-e;
+      justify-self: left;
+    }
+
+    &__descriptions {
+      font-weight: 100;
+      border-left: 0px solid;
+    }
+  }
+}

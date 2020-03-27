@@ -93,3 +93,27 @@
     font-size: 12px;
   }
 }
+
+@media only screen and (max-width: 1600px) and (min-width: 600px) {
+  .tos {
+    font-size: 16px;
+    height: fit-content;
+
+    &__content {
+      height: fit-content;
+    }
+  }
+  
+  .list-item {
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  
+  .list-indent {
+    font-size: 14px;
+  }
+  
+  .list-indent2 {
+    font-size: 12px;
+  }
+}

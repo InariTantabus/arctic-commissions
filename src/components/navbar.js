@@ -10,9 +10,11 @@ class Navbar extends Component {
       this.changePage('contact')
     } else if (window.location.href.indexOf('/tos') > 0) {
       this.changePage('tos')
+    } else if (window.location.href.indexOf('/auth') > 0) {
+      this.changePage('auth')
     } else if (window.location.href.indexOf('/') > 0 || window.location.href.indexOf('/commissions') > 0) {
       this.changePage('commissions')
-    } 
+    }
   }
 
   changePage = page => {

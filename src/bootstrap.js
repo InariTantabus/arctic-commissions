@@ -18,6 +18,7 @@ import Store from './components/store';
 import Contact from "./components/contact";
 import Tos from "./components/tos";
 import Examples from "./components/examples";
+import Auth from "./components/auth";
 
 
 function main() {
@@ -31,6 +32,7 @@ function main() {
             <Route path='/contact' component={Contact} />
             <Route path='/tos' component={Tos} />
             <Route path='/examples' component={Examples} />
+            <Route path='/auth' component={Auth} />
           </Switch>
         </App>
       </Router>
